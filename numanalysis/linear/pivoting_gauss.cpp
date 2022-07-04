@@ -24,7 +24,7 @@ int main()
         int pivot_i = k;
         double tmp;
         for(int i = k+1; i < N; i++)
-            if(matrix[pivot_i][k] < matrix[i][k])
+            if(abs(matrix[pivot_i][k]) < abs(matrix[i][k]))
                 pivot_i = i;
         
         // 맨 위의 행과 자리바꿈한다.
@@ -35,14 +35,16 @@ int main()
             matrix[pivot_i][j] = tmp;
         }
 
+        // 차례로 계수를 0으로 만든다.
         for(int i = k+1; i < N; i++) {
-            double p = matrix[k][k] / matrix[i][k];
+            double p = matrix[i][k] / matrix[k][k];
             for(int j = k; j < N+1; j++) {
-                matrix[i][j] = matrix[k][j] - (matrix[i][j] * p);
+                matrix[i][j] = matrix[i][j] - (matrix[k][j] * p);
             }
         }
     }
 
+    // 해를 구한다.
     for(int i = N-1; i >= 0; i--) {
         for(int j = N-1; j > i; j--)
             matrix[i][N] -= (matrix[i][j] * ans[j]);
