@@ -11,3 +11,4 @@
 * [수치해석](/numanalysis)
     * [부동소수점과 오차](/numanalysis/decimal)
     * [선형 시스템](/numanalysis/linear)
+    * [테일러 다항식](/numanalysis/taylor)
