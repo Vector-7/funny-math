@@ -36,6 +36,7 @@ def cos(x: float, n: int):
     return res
 
 if __name__ == '__main__':
+    # 값 구하기
     print('==== sin(30) ====')
     for i in range(0, 10):
         print(f'{i}: {sin(PI/6, i)}')
